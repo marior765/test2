@@ -67,8 +67,8 @@ export default connect(null, mapDispatchToProps)(props => {
                 </LinkBtn>
             ))
         }
-        <Input onChange={props.titleHandler} />
-        <TextField onChange={props.bodyHandler} />
+        <Input value={props.titleValue} onChange={props.titleHandler} />
+        <TextField value={props.bodyValue} onChange={props.bodyHandler} />
         {props.error ? <p style={{alignSelf: 'center'}}>Some field is empty!</p> : null}
         <Button onClick={props.buttonHandler} >Send</Button>
         </Container>

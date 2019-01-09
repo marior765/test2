@@ -22,6 +22,8 @@ class Home extends Component {
 
         this.state = {
             errorValue: false,
+            titleValue: '',
+            bodyValue: '',
             postBody: {
                 title: '',
                 body: ''
@@ -34,8 +36,9 @@ class Home extends Component {
     }
 
     titleHandler(e) {
-        this.setState({valueError: false});
         this.setState({
+            valueError: false,
+            titleValue: e.target.value,
             postBody: {
                 ...this.state.postBody,
                 title: e.target.value
@@ -44,8 +47,9 @@ class Home extends Component {
     }
 
     bodyHandler(e) {
-        this.setState({valueError: false});
         this.setState({
+            valueError: false,
+            bodyValue: e.target.value,
             postBody: {
                 ...this.state.postBody,
                 body: e.target.value
@@ -62,7 +66,8 @@ class Home extends Component {
                     ...this.state.commentBody,
                     body: ""
                 },
-                value: ''
+                titleValue: '',
+                bodyValue: ''
             })
         } else {
             this.setState({valueError: true});
@@ -73,6 +78,8 @@ class Home extends Component {
 
     render() {
         return <HomeContainer
+                    titleValue={this.state.titleValue}
+                    bodyValue={this.state.bodyValue}
                     error={this.state.valueError}
                     buttonHandler={this.buttonHandler}
                     titleHandler={this.titleHandler}
