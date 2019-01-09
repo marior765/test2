@@ -1,4 +1,4 @@
-##Set server firslty
+##Set server firstly
 
 ### `npm run api-install`
 
